@@ -24,9 +24,9 @@
     this.initConfig({
       pkg: this.file.readJSON('package.json'),
       exec: {
-        jest: {
-          command: 'jest --verbose',
-        },
+        // jest: {
+        //   command: 'jest --verbose',
+        // },
         build_stylus: {
           command: 'node ./node_modules/stylus/bin/stylus ' + stylExpand
         },
@@ -57,7 +57,7 @@
         }
       },
       jshint: {
-        options: { 
+        options: {
           extract: 'auto',
           strict: false,
           newcap: false,
@@ -83,7 +83,7 @@
       watch: {
         scripts: {
           files: sources.scripts,
-          tasks: ['jshint:force', 'browserify:libs', 'exec:jest'],
+          tasks: ['jshint:force', 'browserify:libs'],
           options: {
             livereload: true
           }
@@ -101,13 +101,13 @@
             livereload: true
           }
         },
-        tests: {
-          files: sources.tests,
-          tasks: ['exec:jest'],
-          options: {
-            livereload: false
-          }
-        },
+        // tests: {
+        //   files: sources.tests,
+        //   tasks: ['exec:jest'],
+        //   options: {
+        //     livereload: false
+        //   }
+        // },
       },
     });
 
@@ -119,7 +119,7 @@
 
     this.registerTask('dev', ['connect', 'test', 'watch']);
     this.registerTask('build', ['exec:build_stylus', 'exec:build_fa', 'browserify:libs', 'browserify:vendor']);
-    this.registerTask('test', ['jshint:all', 'build', 'exec:jest']);
+    this.registerTask('test', ['jshint:all', 'build']);
     this.registerTask('default', ['test']);
   };
 

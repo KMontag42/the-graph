@@ -222,7 +222,8 @@ module.exports.register = function (context) {
         this.markDirty();
         console.log(x,y);
     },
-    addEdge: function (edge) {
+      addEdge: function (edge) {
+          console.log('some cool stuff');
       this.props.graph.addEdge(edge.from.process, edge.from.port, edge.to.process, edge.to.port, edge.metadata);
     },
     moveGroup: function (nodes, dx, dy) {
