@@ -45,8 +45,8 @@ function renderViewRectangle(context, viewrect, props) {
 
   // Clip to bounds
   // Left
-  if (x < 0) { 
-    w += x; 
+  if (x < 0) {
+    w += x;
     x = 0;
     viewrect.style.borderLeftColor = props.viewBoxBorder2;
   } else {
@@ -54,8 +54,8 @@ function renderViewRectangle(context, viewrect, props) {
     context.fillRect(0, 0, x, props.height);
   }
   // Top
-  if (y < 0) { 
-    h += y; 
+  if (y < 0) {
+    h += y;
     y = 0;
     viewrect.style.borderTopColor = props.viewBoxBorder2;
   } else {
@@ -63,7 +63,7 @@ function renderViewRectangle(context, viewrect, props) {
     context.fillRect(x, 0, w, y);
   }
   // Right
-  if (w > props.width-x) { 
+  if (w > props.width-x) {
     w = props.width-x;
     viewrect.style.borderRightColor = props.viewBoxBorder2;
   } else {
@@ -71,7 +71,7 @@ function renderViewRectangle(context, viewrect, props) {
     context.fillRect(x+w, 0, props.width-(x+w), props.height);
   }
   // Bottom
-  if (h > props.height-y) { 
+  if (h > props.height-y) {
     h = props.height-y;
     viewrect.style.borderBottomColor = props.viewBoxBorder2;
   } else {
