@@ -249,7 +249,8 @@ var Component = createReactClass({
         // may be delayed, or never arrive.
         this.state.currentPan[0] = panTo.x;
         this.state.currentPan[1] = panTo.y;
-        this.props.onPanTo(panTo, event);
+          this.props.onPanTo(panTo, event);
+          console.log(x,y);
       }
     }).bind(this));
   }
